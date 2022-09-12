@@ -25,10 +25,19 @@ function App() {
             <a href='#section4'>Slideshow</a>
             <hr></hr>
         </div>
+      
         <div>
             <button className='buttondownload'><img src={download} className="download"></img>Download Board</button>
         </div>
       </div>
+      <div className='dotnav'>
+          <ul>
+            <a href='#section1'><li>•</li></a>
+            <a href='#section2'><li>•</li></a>
+            <a href='#section3'><li>•</li></a>
+            <a href='#section4'><li>•</li></a>
+          </ul>
+        </div>
       <div id="section1" className='section1'>
         <div className='sec1container'>
           <div className='text'>

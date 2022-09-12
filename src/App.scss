@@ -51,11 +51,34 @@
         margin-right: 5px;
       }
     }
+  }
 
-   
+  .dotnav{
+    position: fixed;
+    top: 40%;
+    right: 3%;
+    bottom: 0;
+    display: block;
+    height: 40%;
+    z-index: 100;
+    color: black;
+
+    ul{
+      list-style-type:none;
+      a{
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+        line-height: 25px;
+
+        &:hover{
+          color: gray;
+        }
+      }
+    }
   }
   .section1{
-    background-image: url('../public/background2.png');
+   background-image: url('../public/background2.png');
     height: 1500px;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
