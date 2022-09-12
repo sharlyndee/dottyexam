@@ -1,6 +1,7 @@
 
 import './App.scss';
-import React from 'react'
+
+import React, { useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import play  from './play.png'
@@ -10,19 +11,24 @@ import whitsunday  from './whitsunday.png'
 function App() {
 
 
+  const [navbarSelection, setnavbarSelection] = useState(1);
+
+ 
+
   return (
     <div className="container">
-      <div className='header'>
+      <div className='header headercolor'> 
+   
         <div className='headercontainer'>
-            <a href='#section1'><img src={play} className='playbtn'></img></a> 
+            <a href='#section1' className={`sectiontext ${navbarSelection == 1 ? `sectionselected` : null}`}><img src={play} className='playbtn'></img></a> 
             <hr></hr>
-            <a href='#section2'>Background & Challenge</a>
+            <a href='#section2' className={`sectiontext ${navbarSelection == 2 ? `sectionselected` : null}`}>Background & Challenge</a>
             <hr></hr>
-            <a href='#section3'>Solution</a>
+            <a href='#section3' className={`sectiontext ${navbarSelection == 3 ? `sectionselected` : null}`}>Solution</a>
             <hr></hr>
             <a>Results & Effectiveness </a>
             <hr></hr>
-            <a href='#section4'>Slideshow</a>
+            <a href='#section4' className={`sectiontext ${navbarSelection == 4 ? `sectionselected` : null}`}>Slideshow</a>
             <hr></hr>
         </div>
       
@@ -32,19 +38,19 @@ function App() {
       </div>
       <div className='dotnav'>
           <ul>
-            <a href='#section1'><li>•</li></a>
-            <a href='#section2'><li>•</li></a>
-            <a href='#section3'><li>•</li></a>
-            <a href='#section4'><li>•</li></a>
+            <a href='#section1' className={`dotstyle ${navbarSelection == 1 ? `dotselected` : null}`}><li>•</li></a>
+            <a href='#section2'  className={`dotstyle ${navbarSelection == 2 ? `dotselected` : null}`}><li>•</li></a>
+            <a href='#section3'  className={`dotstyle ${navbarSelection == 3 ? `dotselected` : null}`}><li>•</li></a>
+            <a href='#section4'  className={`dotstyle ${navbarSelection == 4 ? `dotselected` : null}`}><li>•</li></a>
           </ul>
         </div>
       <div id="section1" className='section1'>
-        <div className='sec1container'>
+        <div className='sec1container' onMouseEnter={()=>{setnavbarSelection(1)}}>
           <div className='text'>
             <button className='playbutton'>►</button>
           </div>
         </div>
-        <div id="section2" className='sec2container'>
+        <div id="section2" className='sec2container'  onMouseEnter={()=>{setnavbarSelection(2)}}>
           <div className='row'>
             <img src={whitsunday} className="whitsunday"/>
           </div>
@@ -57,7 +63,7 @@ function App() {
             <div className='description'>Shift perceptions and re-build the Whitsundays social currency as a world-class destination.</div>
           </div>
         </div>
-        <div id="section3" className='sec3container'>
+        <div id="section3" className='sec3container'  onMouseEnter={()=>{setnavbarSelection(3)}}>
           <div className='solution'>Solution</div>
             <div className='rowcontainer'>
               <div className='rowsolution'>
@@ -75,7 +81,7 @@ function App() {
             </div>
           </div>
           
-          <div id="section4" className='sec4container'>
+          <div id="section4" className='sec4container'  onMouseEnter={()=>{setnavbarSelection(4)}}>
             <div className='tabs'>
             <Tabs>
               <div className='tablist'>
