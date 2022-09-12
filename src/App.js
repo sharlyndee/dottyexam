@@ -3,6 +3,9 @@ import './App.scss';
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import play  from './play.png'
+import download  from './download.png'
+import whitsunday  from './whitsunday.png'
 
 function App() {
 
@@ -11,7 +14,7 @@ function App() {
     <div className="container">
       <div className='header'>
         <div className='headercontainer'>
-            <a href='#section1'>play</a> 
+            <a href='#section1'><img src={play} className='playbtn'></img></a> 
             <hr></hr>
             <a href='#section2'>Background & Challenge</a>
             <hr></hr>
@@ -23,19 +26,18 @@ function App() {
             <hr></hr>
         </div>
         <div>
-            <button className='buttondownload'>Download Board</button>
+            <button className='buttondownload'><img src={download} className="download"></img>Download Board</button>
         </div>
       </div>
       <div id="section1" className='section1'>
         <div className='sec1container'>
           <div className='text'>
-            <div>The</div>
-            <div>WhitSUNDAY</div>
+            <button className='playbutton'>►</button>
           </div>
         </div>
         <div id="section2" className='sec2container'>
           <div className='row'>
-            <h1>the whitsundays</h1>
+            <img src={whitsunday} className="whitsunday"/>
           </div>
           <div className='row2'>
             <div className='sec2text'>Background <br></br> & Audience</div>
@@ -81,7 +83,10 @@ function App() {
               <TabPanel>
                 <div className='tabcontent'>
                    <div className='rowtab1'>
-                      Video
+                      
+                      <iframe width="350" height="200"
+                         src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                      </iframe>
                     </div>
                     <div className='rowtab'>
                       <p>Live reads from NOVA presenters reflected the ever-evolving story of Jake in real time, and encouraged people to get involved to shape the story themselves.</p> 
